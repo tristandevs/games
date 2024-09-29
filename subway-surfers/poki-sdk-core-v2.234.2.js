@@ -2795,7 +2795,7 @@
                         return n
                           ? {
                               bid: n,
-                              vast: "https://aax.amazon-adsystem.com/e/dtb/vast?b=" + _("amzniid", t) + "&rnd=" + Math.round(1e10 * Math.random()) + "&pp=" + i,
+                              vast: "disableads/e/dtb/vast?b=" + _("amzniid", t) + "&rnd=" + Math.round(1e10 * Math.random()) + "&pp=" + i,
                             }
                           : null;
                       })(c);
@@ -2970,7 +2970,7 @@
             this.timing.startWaterfallTimer(this.cutOffWaterfall.bind(this)), this.retries++, (this.criteria.waterfall = this.retries);
             var e = (this.retries - 1) % this.adUnitPaths.length,
               t = this.adUnitPaths[e],
-              i = "https://securepubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=" + t + "&ciu_szs&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}";
+              i = "disableads/gampad/ads?sz=640x360|640x480&iu=" + t + "&ciu_szs&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}";
             nt.consentString && nt.consentString.length > 0 && (this.criteria.consent_string = nt.consentString);
             var r = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 970;
             this.criteria.billboards_fit = r ? "yes" : "no";

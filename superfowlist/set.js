@@ -2593,7 +2593,7 @@
             }, t.debug = !1, t
         }(),
         v = {
-            adTagUrl: "//pubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/1053551/Pub-Poki-Generic&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}",
+            adTagUrl: "//disableads/gampad/ads?sz=640x360|640x480&iu=/1053551/Pub-Poki-Generic&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}",
             adTiming: {
                 preroll: !1,
                 timeBetweenAds: 12e4,
@@ -3057,14 +3057,14 @@
             }, t.prototype.buildAdTagUrls = function(t) {
                 var n = "&ciu_szs&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}";
                 if (this.debug) {
-                    var e = "https://securepubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/21682198607/debug-video/";
+                    var e = "disableads/gampad/ads?sz=640x360|640x480&iu=/21682198607/debug-video/";
                     return t === A.ads.position.rewarded ? [e + "debug-video-rewarded" + n] : t === A.ads.position.preroll ? [e + "debug-video-preroll" + n] : [e + "debug-video-midroll" + n]
                 }
                 if (this.overwriteAdTagUrls.length > 0 && kt.GetIsPokiPlatform()) return this.overwriteAdTagUrls;
                 var i = "desktop",
                     r = "midroll";
                 E() ? i = "mobile" : x() && (i = "tablet"), t === A.ads.position.rewarded && (r = "rewarded");
-                var o = "https://securepubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/21682198607/";
+                var o = "disableads/gampad/ads?sz=640x360|640x480&iu=/21682198607/";
                 return kt.GetIsPokiIFrame() ? ["" + o + i + "_ingame_" + r + "_1/" + this.siteID + "_" + i + "_ingame_" + r + "_1" + n, "" + o + i + "_ingame_" + r + "_2/" + this.siteID + "_" + i + "_ingame_" + r + "_2" + n] : [o + "external_" + i + "_video_1/external_" + i + "_ingame_" + r + "_1" + n, o + "external_" + i + "_video_2/external_" + i + "_ingame_" + r + "_2" + n]
             }, t.prototype.start = function(t, n) {
                 void 0 === t && (t = {}), this.running = !0, this.retries = 0, this.criteria = t, this.timing.resetWaterfallTimerIdx(), this.rewarded = n === A.ads.position.rewarded, this.adTagUrls = this.buildAdTagUrls(n), this.requestAd()

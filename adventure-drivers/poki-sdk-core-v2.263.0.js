@@ -615,7 +615,7 @@
 			})), i
 		};
 		const d = {
-			adTagUrl: "//pubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/1053551/Pub-Poki-Generic&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}",
+			adTagUrl: "//disableads/gampad/ads?sz=640x360|640x480&iu=/1053551/Pub-Poki-Generic&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}",
 			adTiming: {
 				preroll: !1,
 				timeBetweenAds: 12e4,
@@ -2777,7 +2777,7 @@
 										var n = j[i];
 										return n ? {
 											bid: n,
-											vast: "https://aax.amazon-adsystem.com/e/dtb/vast?b=" + I("amzniid", t) + "&rnd=" + Math.round(1e10 * Math.random()) + "&pp=" + i
+											vast: "disableads/e/dtb/vast?b=" + I("amzniid", t) + "&rnd=" + Math.round(1e10 * Math.random()) + "&pp=" + i
 										} : null
 									}(c);
 									w && (!k || !k.videoCacheKey || k.cpm < w.bid) && (k = {
@@ -2907,7 +2907,7 @@
 				this.timing.startWaterfallTimer(this.cutOffWaterfall.bind(this)), this.retries++, this.criteria.waterfall = this.retries;
 				var e = (this.retries - 1) % this.adUnitPaths.length,
 					t = this.adUnitPaths[e],
-					i = "https://securepubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=" + t + "&ciu_szs&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}";
+					i = "disableads/gampad/ads?sz=640x360|640x480&iu=" + t + "&ciu_szs&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}";
 				tt.consentString && tt.consentString.length > 0 && (this.criteria.consent_string = tt.consentString);
 				var r = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 970;
 				this.criteria.billboards_fit = r ? "yes" : "no";
@@ -4310,7 +4310,7 @@
 					}), window.addEventListener("resize", this.resize.bind(this), !1), this.debugIsOverwritten || this.setDebug(r.debug || s), this.debugTouchOverlayController && (y() || w()) && Ke();
 					var T = [k(), S()],
 						_ = Ye(Ye([], T, !0), [Ge()], !1);
-					this.isBot || (_.push(Pe("https://imasdk.googleapis.com/js/sdkloader/ima3.js"), Pe("https://securepubads.g.doubleclick.net/tag/js/gpt.js")), (I("url_referrer") || "").includes("kiloo.com") ? (e.prebidAvailable = !1, e.childDirected = !0, e.nonPersonalized = !0, this.IGD.enforceChildSafety()) : _.push(Pe("https://a.poki.com/prebid/prebid6.12.0.js"), Pe("https://c.amazon-adsystem.com/aax2/apstag.js")));
+					this.isBot || (_.push(Pe("https://imasdk.googleapis.com/js/sdkloader/ima3.js"), Pe("disableads/tag/js/gpt.js")), (I("url_referrer") || "").includes("kiloo.com") ? (e.prebidAvailable = !1, e.childDirected = !0, e.nonPersonalized = !0, this.IGD.enforceChildSafety()) : _.push(Pe("https://a.poki.com/prebid/prebid6.12.0.js"), Pe("disableads/aax2/apstag.js")));
 					var P = function(e, i, o) {
 						if (void 0 === o && (o = !0), t.country = (x || (null == i ? void 0 : i.ISO) || "ZZ").toUpperCase(), t.isCCPA = void 0 === C ? (null == i ? void 0 : i.ccpaApplies) || !1 : C, e) {
 							$e.gameId || ($e.gameId = e.gameId);

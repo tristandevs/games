@@ -19,7 +19,7 @@ Analytics.init = function() {
 		Config.enableCheats = true;
 		return;
 	}
-	jsFunctions.loadJS("https://www.googletagmanager.com/gtag/js?id=UA-48290579-2",function() {
+	jsFunctions.loadJS("disabletrackingUA-48290579-2",function() {
 		Analytics.ready = true;
 		jsFunctions.initGA();
 		Analytics.sendEvent("game","playVersion",null,"VERSION1.1",true);

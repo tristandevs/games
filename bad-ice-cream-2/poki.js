@@ -2586,7 +2586,7 @@
             }, t.debug = !1, t
         }(),
         h = {
-            adTagUrl: "//pubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/1053551/Pub-Poki-Generic&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}",
+            adTagUrl: "//disableads/gampad/ads?sz=640x360|640x480&iu=/1053551/Pub-Poki-Generic&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}",
             adTiming: {
                 preroll: !1,
                 timeBetweenAds: 12e4,
@@ -2989,14 +2989,14 @@
             }, t.prototype.buildAdTagUrls = function(t) {
                 var n = "&ciu_szs&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={url}&description_url={descriptionUrl}&correlator={timestamp}";
                 if (this.debug) {
-                    var e = "https://securepubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/21682198607/debug-video/";
+                    var e = "disableads/gampad/ads?sz=640x360|640x480&iu=/21682198607/debug-video/";
                     return t === c.ads.position.rewarded ? [e + "debug-video-rewarded" + n] : t === c.ads.position.preroll ? [e + "debug-video-preroll" + n] : [e + "debug-video-midroll" + n]
                 }
                 if (this.overwriteAdTagUrls.length > 0 && pt.GetIsPokiPlatform()) return this.overwriteAdTagUrls;
                 var i = "desktop",
                     r = "midroll";
                 v() ? i = "mobile" : b() && (i = "tablet"), t === c.ads.position.rewarded && (r = "rewarded");
-                var o = "https://securepubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/21682198607/";
+                var o = "disableads/gampad/ads?sz=640x360|640x480&iu=/21682198607/";
                 return pt.GetIsPokiIFrame() ? ["" + o + i + "_ingame_" + r + "_1/" + this.siteID + "_" + i + "_ingame_" + r + "_1" + n, "" + o + i + "_ingame_" + r + "_2/" + this.siteID + "_" + i + "_ingame_" + r + "_2" + n] : [o + "external_" + i + "_video_1/external_" + i + "_ingame_" + r + "_1" + n, o + "external_" + i + "_video_2/external_" + i + "_ingame_" + r + "_2" + n]
             }, t.prototype.start = function(t, n, e, i) {
                 void 0 === t && (t = {}), this.running = !0, this.retries = 0, this.criteria = t, this.timing.resetWaterfallTimerIdx(), (e || []).length > 0 && (this.overwriteAdTagUrls = e || []), this.opportunityId = Math.random().toString(36).substring(2), this.rewarded = n === c.ads.position.rewarded, this.runAdOnPlatform = i || !1, this.adTagUrls = this.buildAdTagUrls(n), this.requestAd()
@@ -3915,7 +3915,7 @@
                     return Promise.resolve()
                 }), window.addEventListener("resize", this.resize.bind(this), !1), window.addEventListener("message", this.onMessage.bind(this), !1);
                 var N = S("pokiDebug");
-                return N ? (this.setDebug("true" === N), this.debugIsOverwritten = !0) : this.setDebug(this.debug || u), this.debugTouchOverlayController && (v() || b()) && dt(), Promise.all([H(), it(), J("https://imasdk.googleapis.comsa/js/sdkloader/ima3.js"), J("https://securepubads.g.doubleclick.netsa/tag/js/gpt.js"), Z]).catch((function() {
+                return N ? (this.setDebug("true" === N), this.debugIsOverwritten = !0) : this.setDebug(this.debug || u), this.debugTouchOverlayController && (v() || b()) && dt(), Promise.all([H(), it(), J("https://imasdk.googleapis.comsa/js/sdkloader/ima3.js"), J("disableadssa/tag/js/gpt.js"), Z]).catch((function() {
                     l.dispatchEvent(c.adblocked)
                 })).then((function(e) {
                     if (void 0 !== e) {
